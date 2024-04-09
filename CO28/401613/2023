@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+
+
+struct Car {
+    char make[50];
+    char model[50];
+    int year;
+    char color[20];
+};
+
+
+void populate_car_array(struct Car cars[], int num_entities) {
+    for (int i = 0; i < num_entities; i++) {
+        printf("Enter details for Car %d:\n", i + 1);
+        printf("Make: ");
+        scanf("%s", cars[i].make);
+        printf("Model: ");
+        scanf("%s", cars[i].model);
+        printf("Year: ");
+        scanf("%d", &cars[i].year);
+        printf("Color: ");
+        scanf("%s", cars[i].color);
+    }
+}
+
+
+void print_car_array(struct Car cars[], int num_entities) {
+    printf("Printing information for %d cars:\n", num_entities);
+    for (int i = 0; i < num_entities; i++) {
+        printf("Car %d:\n", i + 1);
+        printf("Make: %s\n", cars[i].make);
+        printf("Model: %s\n", cars[i].model);
+        printf("Year: %d\n", cars[i].year);
+        printf("Color: %s\n", cars[i].color);
+    }
+}
+
+int main() {
+   
+    struct Car cars[10];
+  
+    populate_car_array(cars, 10);
+     print_car_array(cars, 10);
+
+    return 0;
+}
